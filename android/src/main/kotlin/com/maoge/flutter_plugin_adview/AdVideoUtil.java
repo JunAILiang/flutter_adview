@@ -31,7 +31,6 @@ public class AdVideoUtil {
 
     static Handler handler = new Handler(){
         public void handleMessage(android.os.Message msg) {
-            Log.e("test",msg.what+"");
             if (msg.what == 0x111) { // 开始播放
                 channel.invokeMethod("didStarted", null);
             } else if(msg.what == 0x222) { // 播放结束
@@ -64,12 +63,9 @@ public class AdVideoUtil {
             public void onAdPlayStart(String s) {
                 AdVideoUtil.type = 0x111;
                 new MyThread().start();
-//                Log.e("test", "onAdPlayStart");
             }
             @Override
             public void onAdPlayEnd(String s, Boolean aBoolean) {
-                android.widget.Toast.makeText(getContext(), "onAdPlayEnd", android.widget.Toast.LENGTH_LONG).show();
-//                Log.e("test", "onAdPlayEnd");
                 AdVideoUtil.type = 0x222;
                 new MyThread().start();
             }
@@ -77,19 +73,14 @@ public class AdVideoUtil {
             public void onAdFailed(String s) {
                 AdVideoUtil.type = 0x404;
                 new MyThread().start();
-//                Log.e("test", "onAdFailed");
             }
             @Override
             public void onAdRecieved(String s) {
-                android.widget.Toast.makeText(getContext(), "onAdRecieved", android.widget.Toast.LENGTH_LONG).show();
                 AdVideoUtil.type = 0x202;
                 new MyThread().start();
-//                Log.e("test", "onAdRecieved");
             }
             @Override
             public void onAdClose(String s) {
-                android.widget.Toast.makeText(getContext(), "onAdClose", android.widget.Toast.LENGTH_LONG).show();
-//                Log.e("test", "onAdClose");
                 AdVideoUtil.type = 0x400;
                 new MyThread().start();
             }

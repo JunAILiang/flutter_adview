@@ -25,9 +25,9 @@ class FlutterPluginAdview extends AdViewEventHander {
   /// 加载视频广告
   /// ids 数组第一个为appid,第二个为广告Id
   void loadVideo() {
-    print("加载广告");
-    print(appId);
-    print(positionId);
+//    print("加载广告");
+//    print(appId);
+//    print(positionId);
     _channel.invokeMethod("loadVideo", [appId, positionId]);
   }
 
