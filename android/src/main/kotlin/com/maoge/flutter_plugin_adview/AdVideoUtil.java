@@ -68,8 +68,8 @@ public class AdVideoUtil {
             }
             @Override
             public void onAdPlayEnd(String s, Boolean aBoolean) {
-                System.out.println("---------------ccc-----------");
-                Log.e("test", "onAdPlayEnd");
+                android.widget.Toast.makeText(getContext(), "onAdPlayEnd", android.widget.Toast.LENGTH_LONG).show();
+//                Log.e("test", "onAdPlayEnd");
                 AdVideoUtil.type = 0x222;
                 new MyThread().start();
             }
@@ -81,20 +81,20 @@ public class AdVideoUtil {
             }
             @Override
             public void onAdRecieved(String s) {
+                android.widget.Toast.makeText(getContext(), "onAdRecieved", android.widget.Toast.LENGTH_LONG).show();
                 AdVideoUtil.type = 0x202;
                 new MyThread().start();
 //                Log.e("test", "onAdRecieved");
             }
             @Override
             public void onAdClose(String s) {
-                System.out.println("---------------bbb-----------");
-                Log.e("test", "onAdClose");
+                android.widget.Toast.makeText(getContext(), "onAdClose", android.widget.Toast.LENGTH_LONG).show();
+//                Log.e("test", "onAdClose");
                 AdVideoUtil.type = 0x400;
                 new MyThread().start();
             }
             @Override
             public void onAdReady(String s) {
-                System.out.println("---------------aaa-----------");
                 AdVideoUtil.type = 0x200;
                 new MyThread().start();
             }
