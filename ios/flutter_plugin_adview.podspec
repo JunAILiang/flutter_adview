@@ -53,7 +53,6 @@ A new flutter plugin project.
   ]
   s.vendored_libraries = [
   'Classes/Frameworks/libAdCompViewSDK.a',
-  'Classes/Frameworks/WeixinLib/libWeChatSDK.a',
   'Classes/Frameworks/GDTLib/libGDTMobSDK.a',
   ]
   s.resource = [
