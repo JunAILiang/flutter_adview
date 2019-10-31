@@ -31,6 +31,7 @@ public class AdVideoUtil {
 
     static Handler handler = new Handler(){
         public void handleMessage(android.os.Message msg) {
+            Log.e("test",msg.what+"");
             if (msg.what == 0x111) { // 开始播放
                 channel.invokeMethod("didStarted", null);
             } else if(msg.what == 0x222) { // 播放结束
@@ -67,9 +68,9 @@ public class AdVideoUtil {
             }
             @Override
             public void onAdPlayEnd(String s, Boolean aBoolean) {
+                Log.e("test", "onAdPlayEnd");
                 AdVideoUtil.type = 0x222;
                 new MyThread().start();
-//                Log.e("test", "onAdPlayEnd");
             }
             @Override
             public void onAdFailed(String s) {
@@ -85,9 +86,9 @@ public class AdVideoUtil {
             }
             @Override
             public void onAdClose(String s) {
+                Log.e("test", "onAdClose");
                 AdVideoUtil.type = 0x400;
                 new MyThread().start();
-//                Log.e("test", "onAdClose");
             }
             @Override
             public void onAdReady(String s) {
