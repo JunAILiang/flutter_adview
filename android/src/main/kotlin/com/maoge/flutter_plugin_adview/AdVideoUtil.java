@@ -42,7 +42,8 @@ public class AdVideoUtil {
             } else if(msg.what == 0x400) { // 关闭广告
                 channel.invokeMethod("didClosed", null);
             } else if(msg.what == 0x200) { // 广告加载完成并可以播放
-                channel.invokeMethod("didReadyToPlay", null);
+                show();
+//                channel.invokeMethod("didReadyToPlay", null);
             }
         }
     };
