@@ -57,6 +57,7 @@ static FlutterPluginAdviewPlugin *instance = nil;
 }
 
 - (void)adCompVideoIsReadyToPlay:(AdCompVideo *)video {
+    [self.video showVideoWithController:[UIApplication sharedApplication].keyWindow.rootViewController];
     [self.channel invokeMethod:@"didReadyToPlay" arguments:nil];
 }
 
